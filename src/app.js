@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.use(wildcardSubdomains({
   namespace: 's',
-  whitelist: ['www', 'app'],
+  whitelist: ['www', 'app', 'multi-mbjyzu'],
 }));
 
 app.use('/', tenantRoute);

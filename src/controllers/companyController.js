@@ -29,7 +29,7 @@ exports.newColor = async (req, res, next) => {
   const TenantSchemas = new Map([['tenant', tenantSchema]]);
   const tenantDB = await switchDB('AppTenants', TenantSchemas, next);
   const tenantModel = await getDBModel(tenantDB, 'tenant');
-  const tenants = await tenantModel.findOneAndUpdate({ companyName: 'domain' }, { info: { $push: { color: 'trynow' } } }, {
+  const tenants = await tenantModel.findOneAndUpdate({ companyName: 'domain' }, { 'info.color': 'trynow' }, {
     new: true,
   });
   res.json({

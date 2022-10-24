@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h4(style='color: red; margin: 5px; font-size: 2vw;') not Data
-  form(action='/' method='post')
-    input#head(type='color' name='head' value='#e66465')
-    label(for='head')   Choose Color #{data}
-    br
-    button#head(type='submit'  value='#e66465') Save
+  h4(style='color: #{data}; margin: 5px; font-size: 2vw;') Dynamic Data
+  //- form(action='./' method='post' name="form1")
+  //-   input#head(type='color' name='head' value='#e66465')
+  //-   label(for='head')   Choose Color #{data}
+  //-   br
+  //-   input(type='submit', value='Submit')

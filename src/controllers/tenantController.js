@@ -11,6 +11,7 @@ exports.getTenants = async (req, res, next) => {
   const tenants = await tenantModel.find({});
   res.render('index', {
     data: req.headers.host === 'systemha' ? '#ff0000' : '#97ff0d',
+    da: req.headers.host,
   });
 };
 

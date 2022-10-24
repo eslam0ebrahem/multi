@@ -9,10 +9,11 @@ exports.getTenants = async (req, res, next) => {
   const tenantDB = await switchDB('AppTenants', TenantSchemas, next);
   const tenantModel = await getDBModel(tenantDB, 'tenant');
   const tenants = await tenantModel.find({});
-  res.render('index', {
+  res.json({
     data: tenants,
   });
 };
+
 exports.newTenant = async (req, res, next) => {
   const tenantDB = await switchDB('AppTenants', TenantSchemas, next, true);
   const tenantModel = await getDBModel(tenantDB, 'tenant');

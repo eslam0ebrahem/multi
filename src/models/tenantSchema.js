@@ -23,6 +23,9 @@ const tenantSchema = new Schema({
     type: String,
     unique: true,
   },
+  info: [{
+    type: String,
+  }],
 });
 
 module.exports = tenantSchema;

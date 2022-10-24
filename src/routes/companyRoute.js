@@ -1,8 +1,9 @@
 const express = require('express');
-const { getCompany } = require('../controllers/companyController');
+const { getCompany, newColor } = require('../controllers/companyController');
 
 const router = express.Router();
 
 router.get('/:domain', getCompany);
+router.post('/:domain', newColor);
 
 module.exports = router;

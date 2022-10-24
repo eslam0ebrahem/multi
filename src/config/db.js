@@ -33,9 +33,10 @@ const switchDB = async (dbName, dbSchema, next, isNew) => {
   const mongo = await connectDB();
   const result = await new Admin(mongo.connection.db).listDatabases();
   const { databases } = result;
-  if (!isNew && databases.filter((i) => i.name === dbName).length === 0) {
-    return next(new Error('🔍 - Not Found'));
-  } if (mongo.connection.readyState === 1) {
+  // if (!isNew && databases.filter((i) => i.name === dbName).length === 0) {
+  //   return next(new Error('🔍 - Not Found'));
+  // }
+  if (mongo.connection.readyState === 1) {
     const db = mongo.connection.useDb(dbName, { useCache: true });
     // Prevent from schema re-registration
     if (!Object.keys(db.models).length) {

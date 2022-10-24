@@ -1,0 +1,87 @@
+extends layout
+
+block content
+  include upperpage.pug
+                                //- (style="display:none")
+  .row.main_spaceBetween(style="margin-top:60px;direction:ltr")
+
+    .col-lg-5
+      - var imgs;
+      include slideshow.pug
+    .col-lg-5(style="direction:rtl;")
+      .row
+        .col-1
+        div(style="max-width:750px;")
+          h5 #{data.name}
+          .lightColor  هذا النص هو نص يمكن ان يستبدل في نفس المساحه، لقد تم توليد هذا النص من مولد النص العربي حيث يمكنك ان تولد مثل هذا النص
+          .sp32 
+          .sp32
+          h4 100 ج . م
+          .sp32
+          .myrow
+            p(style="font-weight:bold") الكمية
+            input(type="number" value = "1" style="height:30px;margin:0px 10px;width:60px")
+            .rect.btn-danger اشتري الان
+          .sp32
+          .myrow.main_spaceBetween
+            .mycolumn
+              .rectB.rect(style="background-color:black; color:white;opacity:80%") رقم المنتج
+              .rectB.rect.rectwired
+            .mycolumn
+              .rectB.rect(style="background-color:black; color:white;opacity:80%")  التصنيفات
+              .rectB.rect.rectwired
+            .mycolumn
+              .rectB.rect(style="background-color:black; color:white;opacity:80%")  الشركه المصنعة
+              .rectB.rect.rectwired
+          .sp32
+          .sp32
+          .sp32
+          h5 مواصفات المنتج
+          .sp32
+          .myrow.main_spaceBetween
+            .mycolumn
+              .rectB.rect(style="background-color:black; color:white;opacity:80%") رقم المنتج
+              .rectB.rect.rectwired
+            .mycolumn
+              .rectB.rect(style="background-color:black; color:white;opacity:80%")  التصنيفات
+              .rectB.rect.rectwired
+            .mycolumn
+              .rectB.rect(style="background-color:black; color:white;opacity:80%")  الشركه المصنعة
+              .rectB.rect.rectwired
+          .sp32
+          .sp16
+          h5 عنوان المنتج
+          .lightColor هذا النص هو نص يمكن ان يستبدل في نفس المساحه، لقد تم توليد هذا النص من مولد النص العربي حيث يمكنك ان تولد مثل هذا النص
+    
+  .divider
+  .myrow(style="margin-top:60px;")
+    .col-1
+    div(style="width:100%")
+        h5 وصف المنتج
+        #descriptionBox
+          .lightColor هذا النص هو نص يمكن ان يستبدل في نفس المساحه، لقد تم توليد هذا النص من مولد النص العربي حيث يمكنك ان تولد مثل هذا النص
+    .col-1
+  .myrow
+    .col-1
+    div(style ="margin:50px 0px; width:100%")
+      table(class='table table-striped' style='box-shadow: rgb(0 0 0 / 20%) 0px 0px 6px 0px')
+        each data in [{"key":"الصفة","value":"الشرح"},{"key":"الصفة","value":"الشرح"},{"key":"الصفة","value":"الشرح"},{"key":"الصفة","value":"الشرح"},{"key":"الصفة","value":"الشرح"},{"key":"الصفة","value":"الشرح"},{"key":"الصفة","value":"الشرح"}]
+          tr
+            td #{data.key}
+            td #{data.value}
+    .col-1 
+    .myrow(style="margin-top:60px;")
+  .myrow
+    .col-1
+    div(style="width:100%; color:red")
+        #descriptionBox
+          .lightColor 
+           h4(style="color:red") ملاحظات هامة
+          .sp32
+          | هذا النص هو نص يمكن ان يستبدل في نفس المساحه، لقد تم توليد هذا النص من مولد النص العربي حيث يمكنك ان تولد مثل هذا النص
+    .col-1
+  .sp256
+  
+  link(rel='stylesheet' href='/stylesheets/productdetails.css')
+  script(src='./javascripts/producs.js')
+   
